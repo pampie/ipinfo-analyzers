@@ -27,6 +27,10 @@ class IPinfo():
         url = "{}/domains/{}".format(self.base_url, ip_address)
         return self._request(url)
 
+    def resproxy(self, ip_address):
+        url = "{}/resproxy/{}".format(self.base_url, ip_address)
+        return self._request(url)
+
     def _request(self, url):
         res = self.session.request("GET", url)
 
