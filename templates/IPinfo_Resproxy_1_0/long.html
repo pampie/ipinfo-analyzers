@@ -1,0 +1,43 @@
+
+  <div class="panel panel-danger">
+    <div class="panel-heading">IPinfo resproxy ({{ content.ip || "-" }})</div>
+    <div class="panel-body">
+      <div ng-if="(content | json) === '{}'">
+        No data found
+      </div>
+      <table class="table">
+          <tr>
+              <td>IP</td>
+              <td>{{ content.ip || "-" }}</td>
+          </tr>
+          <tr>
+              <td>Last Seen</td>
+              <td>{{ content.last_seen }}</td>
+          </tr>
+
+          <tr>
+              <td>Percent Days Seen</td>
+              <td>{{ content.percent_days_seen }}%</td>
+          </tr>
+          <tr>
+              <td>Resproxy Name</td>
+              <td>{{ content.service }}</td>
+          </tr>
+      </table>
+    </div>
+  </div>
+
+<!-- General error  -->
+<div class="panel panel-danger" ng-if="!success">
+  <div class="panel-heading">
+    <strong>{{ artifact.data | fang }}</strong>
+  </div>
+  <div class="panel-body">
+    <dl class="dl-horizontal" ng-if="content.errorMessage">
+      <dt>
+        <i class="fa fa-warning"></i>
+      </dt>
+      <dd class="wrap">{{ content.errorMessage }}</dd>
+    </dl>
+  </div>
+</div>
