@@ -1,11 +1,11 @@
 
   <div class="panel panel-danger">
-    <div class="panel-heading">IPinfo resproxy ({{ content.ip || "-" }})</div>
+    <div class="panel-heading">IPinfo Residential Proxy ({{ content.ip || "-" }})</div>
     <div class="panel-body">
       <div ng-if="(content | json) === '{}'">
         No data found
       </div>
-      <table class="table">
+      <table class="table" ng-if="(content | json) !== '{}'">
           <tr>
               <td>IP</td>
               <td>{{ content.ip || "-" }}</td>
