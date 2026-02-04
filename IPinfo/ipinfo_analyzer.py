@@ -72,7 +72,7 @@ class IPinfoAnalyzer(Analyzer):
             if privacy and privacy.get("service"):
                 taxonomies.append(
                     self.build_taxonomy(
-                        level, namespace, "PrivacyService", privacy.get("service"))
+                        "suspicious", namespace, "PrivacyService", privacy.get("service"))
                 )
 
         elif self.service == "resproxy":
